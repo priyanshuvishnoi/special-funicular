@@ -24,10 +24,9 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-router.get('/', async (req, res) => {
+router.get('/getDetails', async (req, res) => {
   try {
     const usersDetails = await User.find({});
-    console.log('called');
     res.json({ usersDetails });
   } catch (err) {
     console.error(err);
